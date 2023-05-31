@@ -1,3 +1,8 @@
+<?php
+// Pour conecter la constante
+  require_once('app/config.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

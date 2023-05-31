@@ -1,11 +1,5 @@
 <?php
-// Pour créer une constante (variable en JS)
-  define('_RECIPES_IMG_PATH_', 'uploads/recipes/');
-?>
-
-
-
-<?php
+  
   $recipes = [
     ['title'=> 'Mousse au chocolat', 
     'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
@@ -17,7 +11,7 @@
     'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
     'image' => "3-salade.jpg"],
   ];
-
+    //  HEADER
     require_once('templates/header.php');
     ?>
 
@@ -44,27 +38,17 @@
 
       <div class="row" >
       <!-- Nous inserons le code PHP directement dans les lignes du HTML pour creer nos cartes avec foreach -->
-      <?php foreach($recipes as $key => $recipe) {?>
+      <?php foreach($recipes as $key => $recipe) {
+        include('templates/recipe_partial.php');
+      } ?>
           
-          <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
-            <!-- Pour utiliser la constante avec notre boucle foreach -->
-              <img src="<?=_RECIPES_IMG_PATH_.$recipe['image']?>" class="card-img-top" alt="image de <?=$recipe['title']?>">
-              <div class="card-body">
-                <!-- Pour faire un echo directement dans la ligne HTML -->
-
-                <h5 class="card-title"><?=$recipe['title']?></h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
+        </div>
           
-          <?php }
+          <!-- FOOTER -->
+          <?php 
           require_once('templates/footer.php'); 
           ?>
   
 
-        </div>
 </body>
 </html>
