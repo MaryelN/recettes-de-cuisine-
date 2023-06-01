@@ -1,18 +1,8 @@
 <?php
-  
-  $recipes = [
-    ['title'=> 'Mousse au chocolat', 
-    'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "1-chocolate-au-mousse.jpg"],
-    ['title'=> 'Gratin Dauphinois', 
-    'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "2-gratin-dauphinois.jpg"],
-    ['title'=> 'Salade fresh', 
-    'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "3-salade.jpg"],
-  ];
-    //  HEADER
-    require_once('templates/header.php');
+  //Array recettes
+  require_once('app/recipe.php');
+  // Inclure Header
+  require_once('templates/header.php');
     ?>
 
 
@@ -29,7 +19,7 @@
           <h1 class="display-5 fw-bold  lh-1 mb-3">Cuisinea - Recettes de Cuisine</h1>
           <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Voir nos recettes</button>
+            <a href="/recettes.php" class="btn btn-primary btn-lg px-4 me-md-2">Voir nos recettes</a>
           </div>
         </div>
       </div>

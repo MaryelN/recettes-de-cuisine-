@@ -1,19 +1,9 @@
 <?php
-
-  $recipes = [
-    ['title'=> 'Mousse au chocolat', 
-    'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "1-chocolate-au-mousse.jpg"],
-    ['title'=> 'Gratin Dauphinois', 
-    'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "2-gratin-dauphinois.jpg"],
-    ['title'=> 'Salade fresh', 
-    'description' => "Quickly design and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "3-salade.jpg"],
-  ];
-    //  HEADER
-    require_once('templates/header.php');
-    ?>
+  //Array recettes
+  require_once('app/recipe.php');
+  // Inclure Header
+  require_once('templates/header.php');
+  ?>
       
       <!-- MAIN HERO -->
       
