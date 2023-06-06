@@ -1,6 +1,6 @@
 <?php
   //Array recettes
-  require_once('app/recipe.php');
+  require_once('libraries/recipe.php');
   // Inclure Header
   require_once('templates/header.php');
   ?>

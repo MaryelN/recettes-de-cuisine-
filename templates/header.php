@@ -1,6 +1,11 @@
 <?php
 // Pour conecter la constante
-  require_once('app/config.php');
+  require_once('libraries/config.php');
+//Pour recuperer le url de page 
+  $currentPage = basename($_SERVER['SCRIPT_NAME']);
+
+//if statement pour donner la classe active
+  // if($currentPage === 'index.php'){ echo'Active';}
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +28,12 @@
           <img src="assets/images/logo-cuisinea-horizontal.jpg" alt="logo Cuisinea" width="250">
         </a>
 
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-        <li><a href="/index.php" class="nav-link px-2 link-secondary">Accueil</a></li>
-        <li><a href="/recettes.php" class="nav-link px-2">Nos recettes</a></li>
-        <li><a href="#" class="nav-link px-2">Pricing</a></li>
-        <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li>
+      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0 nav nav-pills">
+        <!-- Boucle pour parcourire notre tableau mainMenu et display les valeurs dans le liste -->
+        <?php foreach ($mainMenu as $key => $menu) { ?>
+          <li><a href="<?=$key;?>" class="nav-link px-2 <?php if ($currentPage === $key) { echo 'active'; } ?>"><?=$menu;?></a></li>
+        <?php } ?>
+        
       </ul>
 
       <div class="col-md-3 text-end">
