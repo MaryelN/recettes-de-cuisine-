@@ -7,7 +7,7 @@
 
 
 
-    <div class="container col-xxl-8 px-4 py-5">
+    
       
       <!-- MAIN HERO -->
       
@@ -32,7 +32,7 @@
         include('templates/recipe_partial.php');
       } ?>
           
-        </div>
+      </div>
           
           <!-- FOOTER -->
           <?php 

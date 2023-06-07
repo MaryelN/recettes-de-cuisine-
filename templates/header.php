@@ -1,9 +1,10 @@
 <?php
-// Pour conecter la constante
+// Pour connecter la constante
   require_once('libraries/config.php');
-//Pour recuperer le url de page 
+//Pour recuperer le nom du script de page 
   $currentPage = basename($_SERVER['SCRIPT_NAME']);
-
+  
+// Liasson en dur
 //if statement pour donner la classe active
   // if($currentPage === 'index.php'){ echo'Active';}
 ?>
@@ -41,3 +42,5 @@
         <button type="button" class="btn btn-primary">Sign-up</button>
       </div>
     </header>
+
+    <main class="container col-xxl-8 px-4 py-5">>
