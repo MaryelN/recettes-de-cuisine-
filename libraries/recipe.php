@@ -1,15 +1,5 @@
 <?php
-$recipes = [
-    ['title'=> 'Mousse au chocolat', 
-    'description' => "Mousse and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "1-chocolate-au-mousse.jpg"],
-    ['title'=> 'Gratin Dauphinois', 
-    'description' => "Gratin and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "2-gratin-dauphinois.jpg"],
-    ['title'=> 'Salade fresh', 
-    'description' => "Salade and customize responsive mobile-first sites with Bootstrap, the world's most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins", 
-    'image' => "3-salade.jpg"],
-  ];
+
 /**
  *Get the recipe from the PDO
  *
@@ -23,5 +13,19 @@ $recipes = [
     //Pour donner la valeur de $id = :id avec le typage int
     $query->bindParam(':id', $id, PDO::PARAM_INT);
     $query->execute();
-    return $query->fetch();
+    return $query->fetch(PDO::FETCH_ASSOC);
+  }
+
+/**
+ * return le chemin d'image ou une default
+ *
+ * @param string $image
+ * @return
+ */
+  function getRecipeImage(string|null $image) {
+      if ($image === null) {
+      return _ASSETS_IMG_PATH_.'recipe_default.jpg';
+    } else {
+        return _RECIPES_IMG_PATH_.$image;
+    }
   }

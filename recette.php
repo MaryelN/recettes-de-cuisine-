@@ -1,13 +1,11 @@
 <?php
   // Array recettes
-  require_once('libraries/recipe.php');
+  require_once __DIR__.('libraries/recipe.php');
   // Inclure Tools 
-  require_once('libraries/tools.php');
+  require_once __DIR__.('libraries/tools.php');
   // Inclure Header
-  require_once('templates/header.php');
+  require_once __DIR__.('templates/header.php');
   
-  // constant pour connecter avec la base de données et lier les id's
-  $pdo = new PDO('mysql:dbname=studi_live_cuisinea;host=localhost;charset=utf8mb4', 'root', '');
 
   $id = (int)$_GET['id'];
 
@@ -15,11 +13,6 @@
   $recipe = getRecipeById($pdo, $id);
   
 
-  if ($recipe['image'] === null) {
-    $imagePath = _ASSETS_IMG_PATH_.'recipe_default.jpg';
-  } else {
-      $imagePath = _RECIPES_IMG_PATH_.$recipe['image'];
-  }
 //Pour conventir l'information en tableau
   $ingredients = linesToArray($recipe['ingredients']);
 
@@ -31,7 +24,7 @@
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
       <!-- Insertion de code pour dynamiser l'image -->
-      <img src="<?=$imagePath; ?>" class="d-block mx-lg-auto img-fluid" alt="<?=$recipe['image']?>" loading="lazy" width="700" height="500">
+      <img src="<?=getRecipeImage($recipe['image']); ?>" class="d-block mx-lg-auto img-fluid" alt="<?=$recipe['image']?>" loading="lazy" width="700" height="500">
     </div>
     <div class="col-lg-6">
       <!-- Insertion de code pour dynamiser le titre -->

@@ -1,8 +1,15 @@
 <?php
   //Array recettes
-  require_once('libraries/recipe.php');
+  require_once __DIR__.('libraries/recipe.php');
   // Inclure Header
-  require_once('templates/header.php');
+  require_once __DIR__.('templates/header.php');
+
+  $sql = 'SELECT * FROM recipes ORDER BY id DESC';
+
+  $query = $pdo->prepare($sql);
+  $query->execute();
+  $recipes = $query ->fetchAll();
+
   ?>
       
       <!-- MAIN HERO -->

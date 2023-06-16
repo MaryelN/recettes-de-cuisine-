@@ -1,8 +1,8 @@
 <?php
   //Array recettes
-  require_once('libraries/recipe.php');
+  require_once __DIR__.('libraries/recipe.php');
   // Inclure Header
-  require_once('templates/header.php');
+  require_once __DIR__.('templates/header.php');
     ?>
 
 
@@ -36,7 +36,7 @@
           
           <!-- FOOTER -->
           <?php 
-          require_once('templates/footer.php'); 
+          require_once __DIR__.('templates/footer.php'); 
           ?>
   
 
