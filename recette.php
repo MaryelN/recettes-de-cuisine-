@@ -1,10 +1,10 @@
 <?php
   // Array recettes
-  require_once __DIR__.('libraries/recipe.php');
+  require_once('libraries/recipe.php');
   // Inclure Tools 
-  require_once __DIR__.('libraries/tools.php');
+  require_once('libraries/tools.php');
   // Inclure Header
-  require_once __DIR__.('templates/header.php');
+  require_once('templates/header.php');
   
 
   $id = (int)$_GET['id'];
@@ -14,8 +14,9 @@
   
 
 //Pour conventir l'information en tableau
+if ($recipe) {
   $ingredients = linesToArray($recipe['ingredients']);
-
+  $instructions = linesToArray($recipe['instructions']);
 
   ?>
       
@@ -43,7 +44,20 @@
         <?php } ?>
       </ul>
     </div>
-          
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">>
+      <h2>Instructions</h2>
+      <ol class="list-group">
+        <?php foreach($instructions as $key=> $instruction) {?>
+          <li class="list-group-item"><?= $instruction;?></li>
+        <?php } ?>
+      </ol>
+    </div>  
+    
+    <?php } else { ?>
+      <div class="row text-center">
+        <h1>Recette introuvable</h1>
+      </div>
+    <?php } ?>
       <!-- FOOTER -->
       <?php 
       require_once('templates/footer.php'); 

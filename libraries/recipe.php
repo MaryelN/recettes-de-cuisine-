@@ -29,3 +29,27 @@
         return _RECIPES_IMG_PATH_.$image;
     }
   }
+
+  /**
+   * recuperer notre tableau de recettes avec un limit
+   *
+   * @param PDO $pdo
+   * @param integer|null $limit
+   * @return 
+   */
+  function getRecipes(PDO $pdo, int $limit = null) {
+    $sql = 'SELECT * FROM recipes ORDER BY RAND() DESC';
+  
+    if ($limit) {
+      $sql .= ' LIMIT :limit';
+    }
+  
+    $query = $pdo->prepare($sql);
+  
+    if ($limit) {
+      $query->bindParam(':limit', $limit, PDO::PARAM_INT);
+    }
+  
+    $query->execute();
+    return $query->fetchAll();
+  }

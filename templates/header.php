@@ -1,7 +1,7 @@
 <?php
 // Pour connecter la constante
-  require_once __DIR__.('libraries/config.php');
-  require_once __DIR__.('libraries/pdo.php');
+  require_once('libraries/config.php');
+  require_once('libraries/pdo.php');
 
 //Pour recuperer le nom du script de page 
   $currentPage = basename($_SERVER['SCRIPT_NAME']);
@@ -45,4 +45,4 @@
       </div>
     </header>
 
-    <main class="container col-xxl-8 px-4 py-5">>
+    <main class="container col-xxl-8 px-4 py-5">

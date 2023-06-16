@@ -1,8 +1,11 @@
 <?php
-  //Array recettes
-  require_once __DIR__.('libraries/recipe.php');
+  //Array recette
+  require_once('libraries/recipe.php');
   // Inclure Header
-  require_once __DIR__.('templates/header.php');
+  require_once('templates/header.php');
+
+  //Pour recuperer nos recettes avec la constante de limit
+    $recipes = getRecipes($pdo, _HOME_RECIPES_LIMIT_);
     ?>
 
 
@@ -36,7 +39,7 @@
           
           <!-- FOOTER -->
           <?php 
-          require_once __DIR__.('templates/footer.php'); 
+          require_once('templates/footer.php'); 
           ?>
   
 
